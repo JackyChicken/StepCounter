@@ -1,13 +1,3 @@
-enum lor {
-    left,
-    right
-}
-
-let lastClock = pins.digitalReadPin(DigitalPin.P1);
-let clk = pins.digitalReadPin(DigitalPin.P1);
-let data = pins.digitalReadPin(DigitalPin.P2);
-let lorc:lor;
-let read;
 let steps:number = 0;
 let maxinum:number = 100;
 let mdoh:number;
@@ -25,11 +15,6 @@ basic.forever(function () {
         `)
     }
     if (input.buttonIsPressed(Button.A)) {
-        if (steps >= maxinum) {
-            music.ringTone(Note.E);
-            music.ringTone(Note.D);
-            music.ringTone(Note.C);
-        }
         basic.showString(steps.toString());
     }
     if (input.buttonIsPressed(Button.B)) {
